@@ -1,0 +1,107 @@
+@use "variables";
+
+$isDesktop: map-get(variables.$layout, desktop);
+
+%interFontBold {
+   @include variables.interFont(700);
+   color: variables.$white;
+}
+
+.banner-container {
+   width: 100%;
+   margin: 80px auto;
+   background-color: variables.$darkDesaturatedBlue;
+   display: flex;
+   flex-direction: column-reverse;
+   border-radius: 10px;
+   overflow: hidden;
+   max-width: 330px;
+
+   @media (min-width: $isDesktop) {
+      max-width: none;
+      width: 1100px;
+      flex-direction: row;
+   }
+}
+
+.text {
+   padding: 40px 35px;
+   text-align: center;
+
+   .title {
+      @extend %interFontBold;
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+
+      span {
+         color: variables.$softViolet;
+      }
+   }
+
+   .description {
+      @include variables.interFont(400);
+      font-size: 15px;
+      line-height: 1.7;
+      color: variables.$slightlyTransparentWhite;
+      margin-bottom: 45px;
+   }
+
+   .stats {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 225px;
+
+      summary {
+         @extend %interFontBold;
+         font-size: 25px;
+         margin-bottom: 7px;
+      }
+
+      span {
+         @include variables.lexendFont();
+         color: variables.$slightlyWhiteStats;
+         font-size: 12.9px;
+         letter-spacing: 1px;
+      }
+   }
+
+   @media (min-width: $isDesktop) {
+      max-width: 560px;
+      text-align: left;
+      padding: 70px 100px 60px 70px;
+
+      .title {
+         font-size: 36px;
+         line-height: 1.2;
+         margin-bottom: 25px;
+      }
+
+      .description {
+         margin-bottom: 75px;
+      }
+
+      .stats {
+         flex-direction: row;
+         height: unset;
+         width: 90%;
+      }
+   }
+}
+
+.bg-img {
+   height: 240px;
+   background-image: linear-gradient(variables.$filterImage, variables.$filterImage),
+      url("../images/image-header-mobile.jpg");
+   background-size: cover;
+
+   @media (min-width: $isDesktop) {
+      height: unset;
+      flex-grow: 1;
+      background-image: linear-gradient(variables.$filterImage, variables.$filterImage),
+         url("../images/image-header-desktop.jpg");
+   }
+}

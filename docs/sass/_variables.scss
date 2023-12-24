@@ -1,0 +1,47 @@
+@font-face {
+   font-family: Inter;
+   src: url("../fonts/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+@font-face {
+   font-family: Lexend-Deca;
+   src: url("../fonts/LexendDeca-VariableFont_wght.ttf");
+}
+
+$layout: (
+   mobile: 375px,
+   desktop: 1440px,
+);
+
+// main background
+$veryDarkBlue: hsl(233, 47%, 7%);
+
+// card background
+$darkDesaturatedBlue: hsl(244, 38%, 16%);
+
+// accent
+$softViolet: hsl(277, 64%, 61%);
+
+// main heading, stats
+$white: hsl(0, 0%, 100%);
+
+// main paragraph
+$slightlyTransparentWhite: hsla(0, 0%, 100%, 0.75);
+
+// stat headings
+$slightlyWhiteStats: hsla(0, 0%, 100%, 0.6);
+
+// filter image
+$filterImage: hsla(277, 81%, 43%, 0.5);
+
+@mixin interFont($weight) {
+   font-weight: $weight;
+   font-family: Inter, sans-serif;
+}
+
+@mixin lexendFont() {
+   font-weight: 400;
+   font-family: Lexend-Deca, sans-serif;
+}
+
+// Font size ref: 15px

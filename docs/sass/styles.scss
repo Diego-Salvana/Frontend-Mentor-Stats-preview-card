@@ -1,0 +1,21 @@
+@use "variables";
+@use "banner";
+
+*,
+*::before,
+*::after {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   min-height: 100vh;
+   background-color: variables.$veryDarkBlue;
+   padding: 0.1px 20px;
+
+   @media (min-width: map-get(variables.$layout, desktop)) {
+      display: flex;
+      align-items: center;
+   }
+}
